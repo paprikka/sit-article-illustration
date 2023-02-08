@@ -141,13 +141,14 @@ html {
   --egg-h: calc(782 / var(--h) * 100%);
 
   --delay: 0s;
-  --offset-x: 25%;
-  --offset-y: 140%;
+  --x: 25%;
+  --y: 140%;
+  --offset-y: 10%;
 
   width: var(--egg-w);
   height: var(--egg-h);
   top: 25%;
-  left: 30%;
+  left: 33%;
   animation: eggman 6s var(--delay) linear infinite both;
 
   z-index: -1;
@@ -163,10 +164,10 @@ html {
 
 @keyframes eggman {
   from {
-    translate: calc(var(--offset-x) * -1) calc(var(--offset-y) * -1);
+    translate: calc(var(--x) * -1) calc(var(--y) * -1 + var(--offset-y));
   }
   to {
-    translate: var(--offset-x) var(--offset-y);
+    translate: var(--x) calc(var(--y) + var(--offset-y));
   }
 }
 
