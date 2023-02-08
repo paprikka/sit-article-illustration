@@ -24,7 +24,7 @@ html {
   aspect-ratio: 2266 / 1950;
   /* box-shadow: 0 0 0 5px black; */
   overflow: hidden;
-  max-width: 1024px;
+  max-width: 700px;
   background-color: #fff;
   z-index: 0;
 }
