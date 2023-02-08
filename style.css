@@ -5,6 +5,8 @@ html {
   padding: 0;
   margin: 0;
 
+  background-color: #fff4f4;
+
   --w: 2266;
   --h: 1950;
 }
@@ -20,9 +22,11 @@ html {
   width: 100%;
   position: relative;
   aspect-ratio: 2266 / 1950;
-  box-shadow: 0 0 0 5px black;
+  /* box-shadow: 0 0 0 5px black; */
   overflow: hidden;
   max-width: 1024px;
+  background-color: #fff;
+  z-index: 0;
 }
 
 .canvas img:not(.tv) {
@@ -140,7 +144,7 @@ html {
   --egg-w: calc(636 / var(--w) * 100%);
   --egg-h: calc(782 / var(--h) * 100%);
 
-  --delay: 0s;
+  --delay: -2s;
   --x: 25%;
   --y: 140%;
   --offset-y: 10%;
@@ -155,11 +159,11 @@ html {
 }
 
 .eggman--before {
-  --delay: -2s;
+  --delay: -4s;
 }
 /* .eggman--second {} */
 .eggman--after {
-  --delay: 2s;
+  --delay: 0s;
 }
 
 @keyframes eggman {
