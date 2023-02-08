@@ -88,30 +88,32 @@ html {
   --egg-w: calc(636 / var(--w) * 100%);
   --egg-h: calc(782 / var(--h) * 100%);
 
-  --offset-y: 0%;
-  --offset-x: 0%;
+  --delay: 0s;
+  --offset-x: 25%;
+  --offset-y: 140%;
 
   width: var(--egg-w);
   height: var(--egg-h);
   top: 25%;
   left: 30%;
-  animation: eggman 3s linear infinite both;
+  animation: eggman 6s var(--delay) linear infinite both;
+
   z-index: -1;
 }
 
 .eggman--before {
-  --offset-y: -100%;
-  --offset-x: -100%;
+  --delay: -2s;
 }
 /* .eggman--second {} */
 .eggman--after {
+  --delay: 2s;
 }
 
 @keyframes eggman {
   from {
-    translate: var(--offset-x) var(--offset-y);
+    translate: calc(var(--offset-x) * -1) calc(var(--offset-y) * -1);
   }
   to {
-    translate: calc(var(--offset-x) + 20%) calc(var(--offset-y) + 100%);
+    translate: var(--offset-x) var(--offset-y);
   }
 }
