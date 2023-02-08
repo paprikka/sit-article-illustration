@@ -69,6 +69,16 @@ html {
   animation: ticker-text 3s linear infinite both;
 }
 
+.ticker-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15%;
+  bottom: 15%;
+  width: 10px;
+  background: linear-gradient(to right, #fff, #ffffff00);
+}
+
 @keyframes ticker-text {
   from {
     background-position-x: 0;
