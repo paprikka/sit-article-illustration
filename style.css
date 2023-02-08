@@ -50,7 +50,7 @@ html {
   top: 76%;
   width: calc(1314 / var(--w) * 100%);
   height: calc(94 / var(--h) * 100%);
-  background: url("./public/imgs/ticker.png");
+  background: url(/imgs/ticker.png);
   background-size: 100%;
 }
 
@@ -63,7 +63,7 @@ html {
 }
 
 .ticker-text {
-  background: url(/public/imgs/ticker-text.png);
+  background: url(/imgs/ticker-text.png);
   position: absolute;
   inset: 0;
   background-size: 50% auto;
