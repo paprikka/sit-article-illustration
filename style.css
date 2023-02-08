@@ -1,0 +1,117 @@
+body,
+html {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  margin: 0;
+
+  --w: 2266;
+  --h: 1950;
+}
+
+#app {
+  display: grid;
+  place-content: center;
+  position: absolute;
+  inset: 10px;
+}
+
+.canvas {
+  width: 100%;
+  position: absolute;
+  aspect-ratio: 2266 / 1950;
+  box-shadow: 0 0 0 5px black;
+  overflow: hidden;
+}
+
+.canvas img:not(.tv) {
+  position: absolute;
+}
+
+.tv {
+  max-width: 100%;
+}
+
+.tv-controls {
+  width: calc(261 / var(--w) * 100%);
+
+  top: 15%;
+  right: 3%;
+}
+
+.ticker {
+  position: absolute;
+  left: 10%;
+  top: 76%;
+  width: calc(1314 / var(--w) * 100%);
+  height: calc(94 / var(--h) * 100%);
+  background: url("./public/imgs/ticker.png");
+  background-size: 100%;
+}
+
+.ticker-wrapper {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 84%;
+  overflow: hidden;
+}
+
+.ticker-text {
+  background: url(/public/imgs/ticker-text.png);
+  position: absolute;
+  inset: 0;
+  background-size: 50% auto;
+  background-repeat: repeat-x;
+  background-position-y: center;
+
+  animation: ticker-text 3s linear infinite both;
+}
+
+@keyframes ticker-text {
+  from {
+    background-position-x: 0;
+  }
+
+  to {
+    background-position-x: -200%;
+  }
+}
+
+.egg {
+  width: calc(418 / var(--w) * 100%);
+  top: 41%;
+  left: 8%;
+}
+
+.eggman {
+  --egg-w: calc(636 / var(--w) * 100%);
+  --egg-h: calc(782 / var(--h) * 100%);
+
+  --offset-y: 0%;
+  --offset-x: 0%;
+
+  width: var(--egg-w);
+  height: var(--egg-h);
+  top: 25%;
+  left: 30%;
+  animation: eggman 3s linear infinite both;
+  z-index: -1;
+}
+
+.eggman--before {
+  --offset-y: -100%;
+  --offset-x: -100%;
+}
+/* .eggman--second {} */
+.eggman--after {
+}
+
+@keyframes eggman {
+  from {
+    translate: var(--offset-x) var(--offset-y);
+  }
+  to {
+    translate: calc(var(--offset-x) + 20%) calc(var(--offset-y) + 100%);
+  }
+}
